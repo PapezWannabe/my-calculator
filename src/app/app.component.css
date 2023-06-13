@@ -1,0 +1,23 @@
+.calculator {
+    position: absolute;
+    width: 500px;
+    height: 600px;
+    background-color: rgb(56, 56, 56);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 8%;
+}
+
+.display {
+    background-color:  rgb(158, 158, 158);
+    height: 20%;
+}
+
+.buttons {
+    background-color:  rgb(158, 158, 158);
+    margin-top: 10%;
+    flex-grow: 1;
+}
