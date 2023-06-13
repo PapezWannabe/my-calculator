@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { DisplayTextService } from '../display-text.service';
-import { DisplayComponent } from '../display/display.component';
 
 @Component({
   selector: 'app-button',

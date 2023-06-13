@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DisplayTextService } from '../display-text.service';
 
 @Component({
@@ -6,13 +6,19 @@ import { DisplayTextService } from '../display-text.service';
   templateUrl: './display.component.html',
   styleUrls: ['./display.component.css'],
 })
-export class DisplayComponent {
+export class DisplayComponent implements OnInit {
   constructor(private displayTextService: DisplayTextService) {}
 
   text: string = '';
 
   ngOnInit(): void {
     this.getText();
+    if (this.displayTextService.subsVar == undefined) {
+      this.displayTextService.subsVar =
+        this.displayTextService.emit_function.subscribe(() => {
+          this.getText();
+        });
+    }
   }
 
   getText(): void {
