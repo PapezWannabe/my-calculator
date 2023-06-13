@@ -19,5 +19,5 @@
 .buttons {
     background-color:  rgb(158, 158, 158);
     margin-top: 10%;
-    flex-grow: 1;
+    height: 370px;
 }

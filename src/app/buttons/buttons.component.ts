@@ -20,4 +20,6 @@ export class ButtonsComponent {
   plus = '+';
   minus = '-';
   equal = '=';
+  divide = '/';
+  multiply = '*';
 }
