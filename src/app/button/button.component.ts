@@ -9,9 +9,17 @@ import { DisplayTextService } from '../display-text.service';
 export class ButtonComponent {
   constructor(private displayTextService: DisplayTextService) {}
 
-  @Input() num = 0;
+  @Input() operat?: any;
 
-  addNum(): void {
-    this.displayTextService.addToText(this.num.toString());
+  operation(): void {
+    if (typeof this.operat === 'number') {
+      this.displayTextService.addToText(this.operat.toString());
+    } else {
+      if (this.operat == 'C') {
+        this.displayTextService.clear();
+      } else {
+        this.displayTextService.operation(this.operat);
+      }
+    }
   }
 }

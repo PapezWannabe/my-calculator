@@ -20,9 +20,18 @@ export class DisplayTextService {
     this.emit_function.emit();
   }
 
+  clear(): void {
+    this.text = '';
+    this.emit_function.emit();
+  }
+
   operation(operat: string): void {
-    if (operat == 'clear') {
-      this.text = '';
+    if (operat == '=') {
+      this.text = eval(this.text).toString();
+      this.emit_function.emit();
+    } else {
+      this.text = this.text + operat;
+      this.emit_function.emit();
     }
   }
 
